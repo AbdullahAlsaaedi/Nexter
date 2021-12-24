@@ -13,6 +13,12 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 73.75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   font-family: "Nunito", sans-serif;
   color: #6d5d4b;
@@ -32,6 +38,26 @@ body {
       grid-template-areas: "sidebar hd hd hd hd hd hd hd realtors realtors realtors" "sidebar . ftures ftures ftures ftures ftures ftures ftures ftures ." "sidebar photos photos photos photos photos conts conts conts conts conts" "sidebar . homes homes homes homes homes homes homes homes ." "sidebar gall gall gall gall gall gall gall gall gall gall" "sidebar footer footer footer footer footer footer footer footer footer footer";
 }
 
+@media only screen and (max-width: 62.5em) {
+  .container {
+    -ms-grid-rows: 6rem 80vh min-content 40vw (min-content)[3];
+        grid-template-rows: 6rem 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    -ms-grid-columns: minmax(6rem, 1fr) (minmax(min-content, 14rem))[8] minmax(6rem, 1fr);
+        grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(-webkit-min-content, 14rem)) minmax(6rem, 1fr);
+        grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 14rem)) minmax(6rem, 1fr);
+        grid-template-areas: "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" "hd hd hd hd hd hd hd realtors realtors realtors" ". ftures ftures ftures ftures ftures ftures ftures ftures ." "photos photos photos photos photos conts conts conts conts conts" ". homes homes homes homes homes homes homes homes ." "gall gall gall gall gall gall gall gall gall gall" "footer footer footer footer footer footer footer footer footer footer";
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .container {
+    -ms-grid-rows: 6rem calc(100vh - 6rem);
+        grid-template-rows: 6rem calc(100vh - 6rem);
+        grid-template-areas: "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" "hd hd hd hd hd hd hd hd hd hd" "realtors realtors realtors realtors realtors realtors realtors realtors realtors realtors" ". ftures ftures ftures ftures ftures ftures ftures ftures ." "conts conts conts conts conts conts conts conts conts conts" "photos photos photos photos photos photos photos photos photos photos" ". homes homes homes homes homes homes homes homes ." "gall gall gall gall gall gall gall gall gall gall" "footer footer footer footer footer footer footer footer footer footer";
+  }
+}
+
 .heading-1, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -41,6 +67,12 @@ body {
   font-size: 4.5rem;
   line-height: 1;
   color: #f9f7f6;
+}
+
+@media screen and (max-width: 56em) {
+  .heading-1 {
+    font-size: 3.8rem;
+  }
 }
 
 .heading-2 {
@@ -92,6 +124,14 @@ body {
   background-color: #b28451;
 }
 
+@media screen and (max-width: 29em) {
+  .btn {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
+}
+
 .mb-sm {
   margin-bottom: 2rem;
 }
@@ -122,6 +162,17 @@ body {
           justify-content: center;
 }
 
+@media only screen and (max-width: 62.5em) {
+  .sidebar {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .nav-btn {
   border: none;
   background-color: #fff;
@@ -148,6 +199,21 @@ body {
           transform: translateY(1.3rem);
 }
 
+@media only screen and (max-width: 62.5em) {
+  .nav-btn {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+  .nav-btn::before {
+    -webkit-transform: translateY(-1.2rem);
+            transform: translateY(-1.2rem);
+  }
+  .nav-btn::after {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+  }
+}
+
 .header {
   background-color: #54483a;
   -ms-grid-row: 1;
@@ -162,9 +228,9 @@ body {
   padding-top: 4rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr min-content 6rem 1fr;
-      grid-template-rows: 1fr -webkit-min-content 6rem 1fr;
-      grid-template-rows: 1fr min-content 6rem 1fr;
+  -ms-grid-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+      grid-template-rows: 1fr -webkit-min-content minmax(6rem, -webkit-min-content) 1fr;
+      grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   row-gap: 1.5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -210,7 +276,9 @@ body {
 }
 
 .header__seenon-logos img {
-  height: 2.5rem;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+  height: 2vw;
 }
 
 .header__btn {
@@ -219,6 +287,27 @@ body {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
+}
+
+@media only screen and (max-width: 40em) {
+  .header__btn {
+    -ms-grid-column-align: stretch;
+        justify-self: stretch;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .header__heading {
+    line-height: 6rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .header {
+    padding: 3rem;
+    justify-items: center;
+  }
 }
 
 .realtors {
@@ -247,6 +336,22 @@ body {
   -webkit-column-gap: 2rem;
           column-gap: 2rem;
   row-gap: 5vh;
+}
+
+@media only screen and (max-width: 50em) {
+  .realtors__list {
+    -ms-grid-columns: (min-content max-content)[3];
+        grid-template-columns: repeat(3, -webkit-min-content -webkit-max-content);
+        grid-template-columns: repeat(3, min-content max-content);
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .realtors__list {
+    -ms-grid-columns: min-content max-content;
+        grid-template-columns: -webkit-min-content -webkit-max-content;
+        grid-template-columns: min-content max-content;
+  }
 }
 
 .realtors__img {
@@ -322,6 +427,12 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 50em) {
+  .story__pictures {
+    padding: 6rem;
+  }
+}
+
 .story__img--1 {
   width: 100%;
   -ms-grid-column: 2;
@@ -332,6 +443,15 @@ body {
   grid-row: 2 / 6;
   -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 50em) {
+  .story__img--1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+    grid-row: 1 / -1;
+  }
 }
 
 .story__img--2 {
@@ -345,6 +465,16 @@ body {
   z-index: 10;
   -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 50em) {
+  .story__img--2 {
+    width: 100%;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4 / 7;
+    grid-row: 1 / -1;
+  }
 }
 
 .story__content {
@@ -449,13 +579,15 @@ body {
 
 .home__location, .home__area, .home__rooms, .home__price {
   font-size: 1.5rem;
-  margin-left: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .home__location svg, .home__area svg, .home__rooms svg, .home__price svg {

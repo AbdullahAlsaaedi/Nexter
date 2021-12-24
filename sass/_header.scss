@@ -12,7 +12,8 @@
   padding: 8rem;
   padding-top: 4rem;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  // grid-template-columns: minmax(min-content, max-content);
   row-gap: 1.5rem;
   justify-content: center;
 
@@ -45,12 +46,34 @@
     column-gap: 3rem;
     justify-items: center;
     img {
-      height: 2.5rem;
+      // max-height: 2.5rem;
+      // width: 100%;
+      filter: brightness(80%);
+      height: 2vw;
     }
   }
 
   &__btn {
     justify-self: start;
     align-self: start;
+    @media only screen and (max-width: $bp-small-1) {
+      justify-self: stretch;
+    }
+  }
+
+  &__heading {
+    @media only screen and (max-width: $bp-small-1) {
+      // padding: 3rem;
+      line-height: 6rem;
+      text-align: center;
+
+      // font-size: ;
+    }
+  }
+
+  @media only screen and (max-width: $bp-small-1) {
+    padding: 3rem;
+    // line-height: 3rem;
+    justify-items: center;
   }
 }

@@ -57,17 +57,16 @@
   &__rooms,
   &__price {
     font-size: 1.5rem;
-    margin-left: 2rem;
+    // margin-left: 2rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     svg {
       fill: $color-primary;
       width: 2rem;
       height: 2rem;
       margin-right: 1rem;
-    }
-    p {
     }
   }
 
